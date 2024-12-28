@@ -1,0 +1,30 @@
+<div class="weather-container">
+  <form
+    [formGroup]="weatherForm"
+    (ngSubmit)="getWeather()"
+    class="weather-form"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label>City</mat-label>
+      <input matInput formControlName="city" placeholder="Enter city name" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Get Weather</button>
+  </form>
+
+  @if (errorMessage) {
+  <div class="error-message">
+    {{ errorMessage }}
+  </div>
+  } @if (weatherData) {
+  <mat-card class="weather-card">
+    <mat-card-title
+      >Weather in {{ weatherForm.get("city")?.value }}</mat-card-title
+    >
+    <mat-card-content>
+      <p><strong>Temperature:</strong> {{ weatherData.temperature }}</p>
+      <p><strong>Wind:</strong> {{ weatherData.wind }}</p>
+      <p><strong>Description:</strong> {{ weatherData.description }}</p>
+    </mat-card-content>
+  </mat-card>
+  }
+</div>
