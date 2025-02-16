@@ -1,13 +1,20 @@
 import { Component } from "@angular/core";
 import { WeatherComponent } from "./components/weather/weather.component";
+import { HistoryComponent } from "./components/history/history.component";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { CommonModule, DatePipe } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: "app-root",
-  imports: [WeatherComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    WeatherComponent,
+    HistoryComponent,
+    MatGridListModule,
+  ],
   templateUrl: "./app.component.html",
-  standalone: true,
-  styleUrl: "./app.component.scss",
+  styleUrls: ["./app.component.scss"],
 })
-export class AppComponent {
-  title = "angular-signal-signalstore";
-}
+export class AppComponent {}
