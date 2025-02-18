@@ -1,9 +1,6 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>Weather Search</mat-card-title>
-        <mat-card-subtitle
-            >Find the current weather for any city</mat-card-subtitle
-        >
     </mat-card-header>
     <mat-card-content>
         <form
@@ -12,32 +9,31 @@
             class="weather-form"
         >
             <mat-form-field appearance="outline">
-                <mat-label>City</mat-label>
+                <mat-label>Search</mat-label>
                 <input
                     matInput
+                    placeholder="Type something..."
                     formControlName="city"
-                    placeholder="Enter city name"
                 />
+                <button mat-icon-button matSuffix type="submit">
+                    <mat-icon>search</mat-icon>
+                </button>
             </mat-form-field>
-            <button
-                mat-raised-button
-                color="primary"
-                type="submit"
-                class="search-button"
-            >
-                Search
-            </button>
         </form>
 
         @if (errorMessage) {
         <div class="error-message">
             {{ errorMessage }}
         </div>
-        } @if (weatherData) {
+        } @if (weatherData && !loading) {
         <div class="weather-info">
             <p><strong>Temperature:</strong> {{ weatherData.temperature }}</p>
             <p><strong>Wind:</strong> {{ weatherData.wind }}</p>
             <p><strong>Description:</strong> {{ weatherData.description }}</p>
+        </div>
+        } @else if (loading) {
+        <div style="justify-content: center; display: flex">
+            <mat-spinner></mat-spinner>
         </div>
         }
     </mat-card-content>

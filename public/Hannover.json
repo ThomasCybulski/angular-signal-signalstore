@@ -1,0 +1,10 @@
+{
+    "temperature": "0 °C",
+    "wind": "12 km/h",
+    "description": "Clear",
+    "forecast": [
+        { "day": "1", "temperature": "-8 °C", "wind": "13 km/h" },
+        { "day": "2", "temperature": "-4 °C", "wind": "24 km/h" },
+        { "day": "3", "temperature": " °C", "wind": "-1 km/h" }
+    ]
+}

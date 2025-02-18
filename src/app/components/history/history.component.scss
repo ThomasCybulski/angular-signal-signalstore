@@ -7,13 +7,18 @@
 
 .history-item {
     margin: 4px 0;
-
-    button {
-        text-align: left;
-        width: 100%;
-    }
 }
 
 mat-card {
     height: 90%;
+}
+
+mat-card-header {
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+mat-card-actions {
+    align-self: end;
+    margin: auto 0 0;
 }

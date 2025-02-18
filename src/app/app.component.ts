@@ -1,18 +1,18 @@
-import { Component } from '@angular/core'
-import { WeatherComponent } from './components/weather/weather.component'
-import { HistoryComponent } from './components/history/history.component'
-import { MatGridListModule } from '@angular/material/grid-list'
-import { CommonModule, DatePipe } from '@angular/common'
-import { FormsModule } from '@angular/forms'
+import { Component } from '@angular/core';
+import { HistoryComponent } from './components/history/history.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { WeatherSearchComponent } from './components/weather-search/weather-search.component';
 
 @Component({
     selector: 'app-root',
     imports: [
         CommonModule,
         FormsModule,
-        WeatherComponent,
         HistoryComponent,
         MatGridListModule,
+        WeatherSearchComponent,
     ],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
