@@ -1,38 +1,44 @@
 <mat-card>
-  <mat-card-header>
-    <mat-card-title>Weather Search</mat-card-title>
-    <mat-card-subtitle>Find the current weather for any city</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <form
-      [formGroup]="weatherForm"
-      (ngSubmit)="getWeather()"
-      class="weather-form"
-    >
-      <mat-form-field appearance="outline">
-        <mat-label>City</mat-label>
-        <input matInput formControlName="city" placeholder="Enter city name" />
-      </mat-form-field>
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        class="search-button"
-      >
-        Search
-      </button>
-    </form>
+    <mat-card-header>
+        <mat-card-title>Weather Search</mat-card-title>
+        <mat-card-subtitle
+            >Find the current weather for any city</mat-card-subtitle
+        >
+    </mat-card-header>
+    <mat-card-content>
+        <form
+            [formGroup]="weatherForm"
+            (ngSubmit)="getWeather()"
+            class="weather-form"
+        >
+            <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <input
+                    matInput
+                    formControlName="city"
+                    placeholder="Enter city name"
+                />
+            </mat-form-field>
+            <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                class="search-button"
+            >
+                Search
+            </button>
+        </form>
 
-    @if (errorMessage) {
-    <div class="error-message">
-      {{ errorMessage }}
-    </div>
-    } @if (weatherData) {
-    <div class="weather-info">
-      <p><strong>Temperature:</strong> {{ weatherData.temperature }}</p>
-      <p><strong>Wind:</strong> {{ weatherData.wind }}</p>
-      <p><strong>Description:</strong> {{ weatherData.description }}</p>
-    </div>
-    }
-  </mat-card-content>
+        @if (errorMessage) {
+        <div class="error-message">
+            {{ errorMessage }}
+        </div>
+        } @if (weatherData) {
+        <div class="weather-info">
+            <p><strong>Temperature:</strong> {{ weatherData.temperature }}</p>
+            <p><strong>Wind:</strong> {{ weatherData.wind }}</p>
+            <p><strong>Description:</strong> {{ weatherData.description }}</p>
+        </div>
+        }
+    </mat-card-content>
 </mat-card>

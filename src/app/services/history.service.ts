@@ -1,22 +1,22 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core'
 
 @Injectable({
-  providedIn: "root",
+    providedIn: 'root',
 })
 export class HistoryService {
-  private history: string[] = [];
+    private history: string[] = []
 
-  getHistory(): string[] {
-    return this.history;
-  }
-
-  addCity(city: string): void {
-    if (city && !this.history.includes(city)) {
-      this.history.push(city);
+    getHistory(): string[] {
+        return this.history
     }
-  }
 
-  clearHistory(): void {
-    this.history = [];
-  }
+    addCity(city: string): void {
+        if (city && !this.history.includes(city)) {
+            this.history.push(city)
+        }
+    }
+
+    clearHistory(): void {
+        this.history = []
+    }
 }

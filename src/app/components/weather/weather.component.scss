@@ -1,29 +1,29 @@
 .weather-card {
-  width: 100%;
-  background-color: #fff;
-  color: #000;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
 }
 
 .weather-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-  mat-form-field {
-    width: 100%;
-  }
+    mat-form-field {
+        width: 100%;
+    }
 
-  .search-button {
-    align-self: flex-end;
-  }
+    .search-button {
+        align-self: flex-end;
+    }
 }
 
 .weather-info {
-  margin-top: 16px;
-  font-size: 16px;
-  color: #000;
+    margin-top: 16px;
+    font-size: 16px;
+    color: #000;
 }
 
 mat-card {
-  height: 90%;
+    height: 90%;
 }
