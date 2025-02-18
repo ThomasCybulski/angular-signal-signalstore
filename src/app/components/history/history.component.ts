@@ -13,8 +13,8 @@ import { WeatherService } from '../../services/weather.service';
 })
 export class HistoryComponent {
     constructor(
-        private historyService: HistoryService,
-        private weatherService: WeatherService
+        private readonly historyService: HistoryService,
+        private readonly weatherService: WeatherService
     ) {}
 
     get history(): string[] {

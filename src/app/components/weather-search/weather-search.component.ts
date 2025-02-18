@@ -31,9 +31,9 @@ export class WeatherSearchComponent implements OnInit {
     loading = false;
 
     constructor(
-        private fb: FormBuilder,
-        private weatherService: WeatherService,
-        private historyService: HistoryService
+        private readonly fb: FormBuilder,
+        private readonly weatherService: WeatherService,
+        private readonly historyService: HistoryService
     ) {
         this.weatherForm = this.fb.group({
             city: [''],

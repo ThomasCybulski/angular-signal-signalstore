@@ -8,10 +8,9 @@ import * as BadRothenfelde from '../../../public/BadRothenfelde.json';
     providedIn: 'root',
 })
 export class WeatherService {
-    private weatherDataSubject = new BehaviorSubject<any>(null);
-    readonly weatherData$ = this.weatherDataSubject.asObservable();
+    readonly weatherData$ = new BehaviorSubject<any>(null);
 
-    constructor(private http: HttpClient) {}
+    constructor(private readonly http: HttpClient) {}
 
     getWeather(city: string): Observable<any> {
         const url = `https://goweather.herokuapp.com/weather/${city}`;
@@ -22,17 +21,14 @@ export class WeatherService {
         switch (city) {
             case 'Hannover':
                 return of(Hannover);
-                break;
             case 'Bad Rothenfelde':
                 return of(BadRothenfelde);
-                break;
             default:
                 return of(null);
-                break;
         }
     }
 
     setWeatherData(data: any): void {
-        this.weatherDataSubject.next(data);
+        this.weatherData$.next(data);
     }
 }
