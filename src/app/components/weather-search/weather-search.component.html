@@ -21,19 +21,13 @@
             </mat-form-field>
         </form>
 
-        @if (errorMessage) {
-        <div class="error-message">
-            {{ errorMessage }}
-        </div>
-        } @if (weatherData && !loading) {
-        <div class="weather-info">
-            <p><strong>Temperature:</strong> {{ weatherData.temperature }}</p>
-            <p><strong>Wind:</strong> {{ weatherData.wind }}</p>
-            <p><strong>Description:</strong> {{ weatherData.description }}</p>
-        </div>
-        } @else if (loading) {
+        @if (loading) {
         <div style="justify-content: center; display: flex">
             <mat-spinner></mat-spinner>
+        </div>
+        } @if (errorMessage) {
+        <div class="error-message">
+            {{ errorMessage }}
         </div>
         }
     </mat-card-content>

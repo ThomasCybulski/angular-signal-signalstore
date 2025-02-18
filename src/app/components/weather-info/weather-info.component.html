@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Weather Info</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        @if(!weatherData) {
+        <p>No data available</p>
+        } @if (weatherData) {
+        <div class="weather-info">
+            <p><strong>Temperature:</strong> {{ weatherData.temperature }}</p>
+            <p><strong>Wind:</strong> {{ weatherData.wind }}</p>
+            <p><strong>Description:</strong> {{ weatherData.description }}</p>
+        </div>
+        }
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="loadWeatherData()">
+            Load Data
+        </button>
+    </mat-card-actions>
+</mat-card>

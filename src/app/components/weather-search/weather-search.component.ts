@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -24,7 +24,7 @@ import { finalize } from 'rxjs';
     templateUrl: './weather-search.component.html',
     styleUrls: ['./weather-search.component.scss'],
 })
-export class WeatherSearchComponent implements OnInit {
+export class WeatherSearchComponent {
     weatherForm: FormGroup;
     weatherData: any = null;
     errorMessage: string | null = null;
@@ -37,12 +37,6 @@ export class WeatherSearchComponent implements OnInit {
     ) {
         this.weatherForm = this.fb.group({
             city: [''],
-        });
-    }
-
-    ngOnInit() {
-        this.weatherService.weatherData$.subscribe((data) => {
-            this.weatherData = data;
         });
     }
 
