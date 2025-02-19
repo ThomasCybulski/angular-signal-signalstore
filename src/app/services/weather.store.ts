@@ -71,6 +71,8 @@ export const WeatherStore = signalStore(
                 patchState(store, {
                     cities: [],
                     current: null,
+                    isLoading: false,
+                    hasError: false,
                 });
             },
         };
