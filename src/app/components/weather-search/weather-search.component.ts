@@ -6,8 +6,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { WeatherService } from '../../services/weather.service';
-import { finalize } from 'rxjs';
 import { WeatherStore } from '../../services/weather.store';
 
 @Component({
