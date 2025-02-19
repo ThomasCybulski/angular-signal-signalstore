@@ -23,14 +23,9 @@ import { WeatherService } from '../../services/weather.service';
     templateUrl: './weather-info.component.html',
 })
 export class WeatherInfoComponent {
-    weatherData: any = null;
+    weatherData;
 
-    constructor(private readonly weatherService: WeatherService) {}
-
-    loadWeatherData() {
-        this.weatherService.weatherData$.subscribe((data) => {
-            this.weatherData = data;
-            console.log('Weather data loaded: ', this.weatherData);
-        });
+    constructor(private readonly weatherService: WeatherService) {
+        this.weatherData = this.weatherService.weatherData$;
     }
 }

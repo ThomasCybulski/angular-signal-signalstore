@@ -5,25 +5,18 @@
     <mat-card-content>
         @if(!weatherData) {
         <p>No data available</p>
-        } @if (weatherData) {
+        } @if (weatherData | async; as data) {
         <div class="weather-info">
             <p>
                 <strong>Temperature:</strong>
-                {{ weatherData.current.temperature }} °C
+                {{ data.current.temperature }} °C
             </p>
-            <p>
-                <strong>Wind:</strong> {{ weatherData.current.wind_speed }} km/h
-            </p>
+            <p><strong>Wind:</strong> {{ data.current.wind_speed }} km/h</p>
             <p>
                 <strong>Description:</strong>
-                {{ weatherData.current.weather_descriptions }}
+                {{ data.current.weather_descriptions }}
             </p>
         </div>
         }
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button color="warn" (click)="loadWeatherData()">
-            Load Data
-        </button>
-    </mat-card-actions>
 </mat-card>
