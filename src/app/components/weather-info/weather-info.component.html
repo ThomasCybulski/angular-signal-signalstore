@@ -3,18 +3,21 @@
         <mat-card-title>Weather Info</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        @if(!weatherData) {
+        @if(store.isEmpty()) {
         <p>No data available</p>
-        } @if (weatherData | async; as data) {
+        } @else {
         <div class="weather-info">
             <p>
                 <strong>Temperature:</strong>
-                {{ data.current.temperature }} °C
+                {{ store.current().current.temperature }} °C
             </p>
-            <p><strong>Wind:</strong> {{ data.current.wind_speed }} km/h</p>
+            <p>
+                <strong>Wind:</strong>
+                {{ store.current().current.wind_speed }} km/h
+            </p>
             <p>
                 <strong>Description:</strong>
-                {{ data.current.weather_descriptions }}
+                {{ store.current().current.weather_descriptions }}
             </p>
         </div>
         }

@@ -21,13 +21,13 @@
             </mat-form-field>
         </form>
 
-        @if (loading) {
+        @if (historyStore.isLoading()) {
         <div style="justify-content: center; display: flex">
             <mat-spinner></mat-spinner>
         </div>
-        } @if (errorMessage) {
+        } @if (historyStore.hasError()) {
         <div class="error-message">
-            {{ errorMessage }}
+            Could not fetch weather data. Please try again.
         </div>
         }
     </mat-card-content>

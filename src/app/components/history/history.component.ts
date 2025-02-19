@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { HistoryService } from '../../services/history.service';
 import { WeatherService } from '../../services/weather.service';
+import { WeatherStore } from '../../services/weather.store';
 
 @Component({
     selector: 'app-history',
@@ -12,28 +12,5 @@ import { WeatherService } from '../../services/weather.service';
     styleUrls: ['./history.component.scss'],
 })
 export class HistoryComponent {
-    constructor(
-        private readonly historyService: HistoryService,
-        private readonly weatherService: WeatherService
-    ) {}
-
-    get history(): string[] {
-        return this.historyService.getHistory();
-    }
-
-    clearHistory() {
-        this.historyService.clearHistory();
-    }
-
-    selectCity(city: string) {
-        this.weatherService.getWeather(city).subscribe({
-            next: (data) => {
-                console.log(`Weather data for ${city}:`, data);
-                this.weatherService.setWeatherData(data);
-            },
-            error: (err) => {
-                console.error(`Failed to fetch weather for ${city}`, err);
-            },
-        });
-    }
+    readonly store = inject(WeatherStore);
 }
