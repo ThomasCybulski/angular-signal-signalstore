@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
-import * as Hannover from '../../../public/Hannover.json';
-import * as BadRothenfelde from '../../../public/BadRothenfelde.json';
 import { environment } from '../components/environment/environment';
 
 @Injectable({
