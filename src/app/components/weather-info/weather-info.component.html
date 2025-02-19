@@ -7,9 +7,17 @@
         <p>No data available</p>
         } @if (weatherData) {
         <div class="weather-info">
-            <p><strong>Temperature:</strong> {{ weatherData.temperature }}</p>
-            <p><strong>Wind:</strong> {{ weatherData.wind }}</p>
-            <p><strong>Description:</strong> {{ weatherData.description }}</p>
+            <p>
+                <strong>Temperature:</strong>
+                {{ weatherData.current.temperature }} °C
+            </p>
+            <p>
+                <strong>Wind:</strong> {{ weatherData.current.wind_speed }} km/h
+            </p>
+            <p>
+                <strong>Description:</strong>
+                {{ weatherData.current.weather_descriptions }}
+            </p>
         </div>
         }
     </mat-card-content>
