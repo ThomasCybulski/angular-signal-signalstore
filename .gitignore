@@ -1,3 +1,3 @@
 node_modules
 .angular/
-envrionment.ts
+src/app/components/environment/environment.ts
